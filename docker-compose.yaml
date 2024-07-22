@@ -1,0 +1,16 @@
+services:
+  mysql:
+    container_name: mysql_db
+    image: mysql
+    restart: always
+    ports:
+      - "127.0.0.1:3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: enxada
+  myapp:
+    depends_on:
+      - mysql
+    build: .
+    ports:
+      - "127.0.0.1:25565:25565"

@@ -1,0 +1,4 @@
+name: RecruitTestEnxada
+version: '1.0'
+main: com.github.yoruhinda.recruittest.Main
+api-version: '1.21'
