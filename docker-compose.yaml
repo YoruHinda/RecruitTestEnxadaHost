@@ -1,16 +1,31 @@
 services:
   mysql:
-    container_name: mysql_db
+    container_name: mysql
     image: mysql
     restart: always
     ports:
-      - "127.0.0.1:3306:3306"
+      - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: enxada
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "-uroot", "-proot",  "ping", "-h", "localhost"]
+      interval: 30s
+      timeout: 20s
+      retries: 10
   myapp:
+    container_name: spigot
+    restart: always
     depends_on:
-      - mysql
+      mysql:
+        condition: service_healthy
     build: .
+    networks:
+      - app-network
     ports:
-      - "127.0.0.1:25565:25565"
+      - "25565:25565"
+
+networks:
+  app-network:
+    driver: bridge

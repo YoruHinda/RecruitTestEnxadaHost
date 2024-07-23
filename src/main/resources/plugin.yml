@@ -2,3 +2,12 @@ name: RecruitTestEnxada
 version: '1.0'
 main: com.github.yoruhinda.recruittest.Main
 api-version: '1.21'
+commands:
+  home:
+    description: Teleport to home
+  sethome:
+    description: Set default home or custom home
+  delhome:
+    description: Delete Home
+  homes:
+    description: List Homes

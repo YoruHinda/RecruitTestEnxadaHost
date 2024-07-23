@@ -55,4 +55,5 @@ windvelocity:
 windparticles:
 
 homeparticles: true / false
+homecooldown: 10
 ```
