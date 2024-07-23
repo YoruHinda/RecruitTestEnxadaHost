@@ -1,8 +1,9 @@
 <h1 align="center">Teste De Recrutamento EnxadaHost</h1>
 
 Olá enxada, desenvolvi o código da seguinte maneira:<br/>
-Criei 3 comandos para o teste /wind, /sethome e /home.<br/>
+Criei alguns comandos para o teste estara no documento todos os comandos com sua finalidade.<br/>
 Alem dos comandos utilizei o config.yml do spigot se o usuario optar por configurar por este método.
+Para acessar o banco de dados precisa acessar pelo docker exec.
 
 pasta /data contem a config.yaml que sera enviada diretamente pra pasta dentro do container docker.
 

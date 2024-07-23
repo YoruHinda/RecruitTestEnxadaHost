@@ -7,8 +7,10 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class HomeCommand implements CommandExecutor {
-    public HomeCommand(HomeRepository homeRepository) {
+    private HomeRepository homeRepository;
 
+    public HomeCommand(HomeRepository homeRepository) {
+        this.homeRepository = homeRepository;
     }
 
     @Override
@@ -16,6 +18,6 @@ public class HomeCommand implements CommandExecutor {
         if(sender instanceof Player player){
 
         }
-        return false;
+        return true;
     }
 }

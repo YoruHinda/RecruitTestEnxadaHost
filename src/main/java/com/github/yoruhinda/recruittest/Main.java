@@ -22,7 +22,7 @@ public final class Main extends JavaPlugin {
         getServer().getPluginCommand("sethome").setExecutor(new SethomeCommand(homeRepository));
         getServer().getPluginCommand("delhome").setExecutor(new DelhomeCommand(homeRepository));
         getServer().getPluginCommand("homes").setExecutor(new ListHomeCommand(homeRepository));
-        getServer().getPluginCommand("homes").setExecutor(new HomeCommand(homeRepository));
+        getServer().getPluginCommand("home").setExecutor(new HomeCommand(homeRepository));
         getLogger().info("Plugin Enable");
     }
 

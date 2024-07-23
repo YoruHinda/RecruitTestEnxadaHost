@@ -31,6 +31,7 @@ public class DelhomeCommand implements CommandExecutor {
         if (args.length == 0) {
             if (homeRepository.findHome(player.getUniqueId(), defaultHomeName) != null) {
                 homeRepository.deleteHome(player.getUniqueId(), defaultHomeName);
+                player.sendMessage("Default Home Deleted!");
                 return true;
             }
             player.sendMessage("Default Home Not Set!");
@@ -43,6 +44,7 @@ public class DelhomeCommand implements CommandExecutor {
         String homeName = args[0];
         if (homeRepository.findHome(player.getUniqueId(), homeName) != null) {
             homeRepository.deleteHome(player.getUniqueId(), homeName);
+            player.sendMessage(homeName + " Deleted!");
             return true;
         }
         player.sendMessage("Home Not Set!");

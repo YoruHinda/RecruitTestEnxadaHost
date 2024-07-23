@@ -33,9 +33,11 @@ public class SethomeCommand implements CommandExecutor {
         if (args.length == 0) {
             if (homeRepository.findHome(player.getUniqueId(), defaultHomeName) != null) {
                 homeRepository.updateHome(player.getUniqueId(), defaultHomeName, player.getWorld().getName(), player.getLocation().getX(), player.getLocation().getY(), player.getLocation().getZ());
+                player.sendMessage("Default home Updated!");
                 return true;
             }
             homeRepository.saveHome(new Home(defaultHomeName, player.getUniqueId(), player.getWorld().getName(), player.getLocation().getX(), player.getLocation().getY(), player.getLocation().getZ()));
+            player.sendMessage("Default Home Created!");
             return true;
         }
         return false;
@@ -45,11 +47,13 @@ public class SethomeCommand implements CommandExecutor {
         String homeName = args[0];
         if (homeRepository.findHome(player.getUniqueId(), homeName) != null) {
             homeRepository.updateHome(player.getUniqueId(), homeName, player.getWorld().getName(), player.getLocation().getX(), player.getLocation().getY(), player.getLocation().getZ());
+            player.sendMessage(homeName + " home Updated!");
             return true;
         }
         Location playerLocation = player.getLocation();
         Home home = new Home(homeName, player.getUniqueId(), player.getWorld().getName(), playerLocation.getX(), playerLocation.getY(), playerLocation.getX());
         homeRepository.saveHome(home);
+        player.sendMessage(homeName + " home Created!");
         return false;
     }
 }
