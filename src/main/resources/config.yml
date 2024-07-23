@@ -1,0 +1,4 @@
+cooldown: true
+cooldown-time: 12
+teleport-particle: true
+teleport-particle-effect: PORTAL

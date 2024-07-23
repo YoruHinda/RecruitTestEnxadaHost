@@ -14,15 +14,18 @@ import java.sql.SQLException;
 public final class Main extends JavaPlugin {
     private Connection connection;
     private HomeRepository homeRepository;
+    private static Main INSTANCE;
 
     @Override
     public void onEnable() {
+        INSTANCE = this;
         connection = ConnectionFactory.connection(this);
         homeRepository = new HomeRepository(connection);
         getServer().getPluginCommand("sethome").setExecutor(new SethomeCommand(homeRepository));
         getServer().getPluginCommand("delhome").setExecutor(new DelhomeCommand(homeRepository));
         getServer().getPluginCommand("homes").setExecutor(new ListHomeCommand(homeRepository));
         getServer().getPluginCommand("home").setExecutor(new HomeCommand(homeRepository));
+        saveDefaultConfig();
         getLogger().info("Plugin Enable");
     }
 
@@ -34,5 +37,9 @@ public final class Main extends JavaPlugin {
         } catch (SQLException e) {
             getLogger().info("Database Connection Close Failed!");
         }
+    }
+
+    public static Main getInstance(){
+        return INSTANCE;
     }
 }
