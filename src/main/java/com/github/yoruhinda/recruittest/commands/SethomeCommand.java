@@ -51,7 +51,7 @@ public class SethomeCommand implements CommandExecutor {
             return true;
         }
         Location playerLocation = player.getLocation();
-        Home home = new Home(homeName, player.getUniqueId(), player.getWorld().getName(), playerLocation.getX(), playerLocation.getY(), playerLocation.getX());
+        Home home = new Home(homeName, player.getUniqueId(), player.getWorld().getName(), playerLocation.getX(), playerLocation.getY(), playerLocation.getZ());
         homeRepository.saveHome(home);
         player.sendMessage(homeName + " home Created!");
         return false;
