@@ -9,9 +9,9 @@ import java.sql.Statement;
 
 public class ConnectionFactory {
     public static Connection connection(Plugin plugin) {
-        String url = "jdbc:mysql://127.0.0.1:3306/enxada?useSSL=false&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&autoReconnect=true";
-        String user = "root";
-        String password = "root";
+        String url = System.getenv("DB_URL");
+        String user = System.getenv("DB_USERNAME");
+        String password = System.getenv("DB_PASSWORD");
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection connection = DriverManager.getConnection(url, user, password);
