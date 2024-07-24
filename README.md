@@ -19,7 +19,7 @@ na pessoa que vai avaliar meu código, a documentação estara toda em portuguê
 ## Como usar
 ```
 Clone Git repository
-$ git clone 
+$ git clone https://github.com/YoruHinda/RecruitTestEnxadaHost.git
 ```
 
 ```
