@@ -9,7 +9,7 @@ import java.sql.Statement;
 
 public class ConnectionFactory {
     public static Connection connection(Plugin plugin) {
-        String url = "jdbc:mysql://172.19.0.2:3306/enxada?useSSL=false&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&autoReconnect=true";
+        String url = "jdbc:mysql://127.0.0.1:3306/enxada?useSSL=false&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&autoReconnect=true";
         String user = "root";
         String password = "root";
         try {
