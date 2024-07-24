@@ -1,10 +1,8 @@
 package com.github.yoruhinda.recruittest;
 
-import com.github.yoruhinda.recruittest.commands.DelhomeCommand;
-import com.github.yoruhinda.recruittest.commands.HomeCommand;
-import com.github.yoruhinda.recruittest.commands.ListHomeCommand;
-import com.github.yoruhinda.recruittest.commands.SethomeCommand;
+import com.github.yoruhinda.recruittest.commands.*;
 import com.github.yoruhinda.recruittest.connection.ConnectionFactory;
+import com.github.yoruhinda.recruittest.listeners.WindChargeListener;
 import com.github.yoruhinda.recruittest.repository.HomeRepository;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -21,10 +19,12 @@ public final class Main extends JavaPlugin {
         INSTANCE = this;
         connection = ConnectionFactory.connection(this);
         homeRepository = new HomeRepository(connection);
-        getServer().getPluginCommand("sethome").setExecutor(new SethomeCommand(homeRepository));
-        getServer().getPluginCommand("delhome").setExecutor(new DelhomeCommand(homeRepository));
+        getServer().getPluginCommand("sethome").setExecutor(new SetHomeCommand(homeRepository));
+        getServer().getPluginCommand("delhome").setExecutor(new DelHomeCommand(homeRepository));
         getServer().getPluginCommand("homes").setExecutor(new ListHomeCommand(homeRepository));
         getServer().getPluginCommand("home").setExecutor(new HomeCommand(homeRepository));
+        getServer().getPluginCommand("wind").setExecutor(new WindCommand());
+        getServer().getPluginManager().registerEvents(new WindChargeListener(), this);
         saveDefaultConfig();
         getLogger().info("Plugin Enable");
     }

@@ -11,3 +11,5 @@ commands:
     description: Delete Home
   homes:
     description: List Homes
+  wind:
+    description: Edit wind charge functionality

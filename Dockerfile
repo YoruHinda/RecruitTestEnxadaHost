@@ -5,6 +5,7 @@ WORKDIR /server
 COPY data/ .
 ADD data/plugin ./plugins
 ADD data/server.properties .
+ADD data/plugin/RecruitTestEnxada ./plugins/RecruitTestEnxada
 
 EXPOSE 25565/udp
 EXPOSE 25565/tcp

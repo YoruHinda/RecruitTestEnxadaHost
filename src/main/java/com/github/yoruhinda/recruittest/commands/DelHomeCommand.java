@@ -6,10 +6,10 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class DelhomeCommand implements CommandExecutor {
+public class DelHomeCommand implements CommandExecutor {
     private HomeRepository homeRepository;
 
-    public DelhomeCommand(HomeRepository homeRepository) {
+    public DelHomeCommand(HomeRepository homeRepository) {
         this.homeRepository = homeRepository;
     }
 

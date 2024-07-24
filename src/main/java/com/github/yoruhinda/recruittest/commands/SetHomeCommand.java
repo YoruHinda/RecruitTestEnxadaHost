@@ -8,10 +8,10 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class SethomeCommand implements CommandExecutor {
+public class SetHomeCommand implements CommandExecutor {
     private HomeRepository homeRepository;
 
-    public SethomeCommand(HomeRepository homeRepository) {
+    public SetHomeCommand(HomeRepository homeRepository) {
         this.homeRepository = homeRepository;
     }
 

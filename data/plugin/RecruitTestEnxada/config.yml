@@ -6,4 +6,4 @@ teleport-particle-effect: PORTAL
 wind-velocity: 2
 wind-force: 1
 wind-particles: true
-wind-particles-effect: FIREWORK
+wind-particles-effect: PORTAL
